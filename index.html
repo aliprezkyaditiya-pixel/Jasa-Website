@@ -1,0 +1,1199 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jasa Pembuatan Website | Mulai 300K</title>
+  <meta name="description" content="Jasa pembuatan website profesional mulai 300K untuk perusahaan & UMKM. Gratis konsultasi, harga disepakati bersama sampai deal." />
+
+  <style>
+    :root{
+      /* Palet elegan & jelas (tanpa glow norak) */
+      --nav:#1b2f8a;
+      --hero:#1e3597;
+      --hero2:#1a2f87;
+      --bg:#f4f7ff;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e6eaf5;
+
+      --primary:#ff8a00;
+      --primaryHover:#ff950f;
+      --primary2:#ffb24a;
+
+      --radius:18px;
+      --shadow: 0 12px 30px rgba(16, 24, 40, .12);
+      --shadowSoft: 0 10px 24px rgba(16, 24, 40, .10);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%; overflow-x:hidden;}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      color:var(--text);
+      background: var(--bg);
+      overflow-x:hidden;
+      max-width: 100vw;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1150px, 92vw); margin-inline:auto}
+
+    /* NAV */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background: var(--nav);
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+      position:relative;
+    }
+    .brand{display:flex; align-items:center; gap:10px}
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 42px;
+      height: 42px;
+    }
+    .logo img {
+      width: 250%;
+      height: 250%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-title{color:#fff; font-weight:900; line-height:1.1; font-size:14px}
+    .brand-sub{color:rgba(255,255,255,.75); font-weight:700; font-size:12px}
+
+    .nav-links{display:flex; gap:14px; align-items:center}
+    .nav-links a{
+      color:rgba(255,255,255,.86);
+      font-weight:800;
+      font-size:14px;
+      padding:10px 12px;
+      border-radius:999px;
+      transition: background .18s ease;
+    }
+    .nav-links a:hover{background: rgba(255,255,255,.10)}
+    .nav-cta{display:flex; gap:10px; align-items:center}
+
+    /* BUTTONS (elegan + teks putih) */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid transparent;
+      transition: background .18s ease, transform .18s ease, border-color .18s ease;
+      white-space:nowrap;
+      cursor:pointer;
+      user-select:none;
+
+      font-weight:700;
+      letter-spacing:.2px;
+      font-size:14px;
+      line-height:1;
+    }
+    .btn:active{transform: translateY(1px)}
+    .btn-primary{
+      background: var(--primary);
+      color:#fff;
+      box-shadow: 0 10px 22px rgba(255,138,0,.20);
+    }
+    .btn-primary:hover{background: var(--primaryHover)}
+    .btn-outline{
+      background: transparent;
+      color:#fff;
+      border-color: rgba(255,255,255,.30);
+    }
+    .btn-outline:hover{background: rgba(255,255,255,.10)}
+    .btn-soft{
+      background: rgba(33,61,176,.10);
+      color: #1e3a8a;
+      border-color: rgba(33,61,176,.18);
+    }
+    .btn-soft:hover{background: rgba(33,61,176,.14)}
+
+    /* ====== HAMBURGER 3 GARIS (FIX) ====== */
+    .hamburger{
+      display:none;               /* default: hidden di desktop */
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.30);
+      background: transparent;
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      padding:0;
+      flex:0 0 auto;
+    }
+    .hamburger i{
+      display:flex;
+      flex-direction:column;
+      gap:5px;
+    }
+    .hamburger i span{
+      display:block;
+      width:18px;
+      height:2px;
+      background: rgba(255,255,255,.92);
+      border-radius:999px;
+    }
+
+    /* Dropdown menu (keluar dari nav-inner supaya tidak ganggu layout) */
+    .mobile-menu{
+      display:none;
+      background: rgba(27,47,138,.98);
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding: 8px 0 10px;
+    }
+    .mobile-menu a{
+      display:block;
+      padding: 12px 16px;
+      color: rgba(255,255,255,.92);
+      font-weight: 800;
+      font-size: 14px;
+    }
+    .mobile-menu a:hover{
+      background: rgba(255,255,255,.08);
+    }
+    .mobile-menu.show{display:block}
+
+    /* HERO */
+    .hero{
+      background: linear-gradient(180deg, var(--hero), var(--hero2));
+      color:#fff;
+      padding: 40px 0 58px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      left:-10%;
+      right:-10%;
+      bottom:-95px;
+      height:190px;
+      background:#fff;
+      border-radius: 1000px 1000px 0 0;
+    }
+
+    .hero-wrap{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:24px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+      min-width:0;
+    }
+
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.90);
+      font-weight:700;
+      font-size:13px;
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.9)}
+
+    .hero h1{
+      margin:14px 0 10px;
+      font-size: clamp(28px, 3.5vw, 44px);
+      line-height:1.12;
+      letter-spacing:-.5px;
+      font-weight:900;
+    }
+    .accent{
+      color: var(--primary2);
+      font-weight:1000;
+    }
+    .hero p{
+      margin:0;
+      color: rgba(255,255,255,.88);
+      font-size: 15px;
+      line-height:1.75;
+      max-width: 66ch;
+      font-weight:600;
+    }
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .hero-stats{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:16px;
+    }
+    .stat{
+      display:flex; gap:10px; align-items:center;
+      padding:9px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.16);
+      color: rgba(255,255,255,.92);
+      font-weight:700;
+      font-size:13px;
+    }
+
+    .hero-card{
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius);
+      padding:16px;
+      width:100%;
+      max-width: 440px;
+      margin-left:auto;
+      min-width:0;
+    }
+    .hero-preview{
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 16px;
+      overflow:hidden;
+    }
+    .preview-top{
+      padding:10px 12px;
+      display:flex; gap:8px; align-items:center;
+      border-bottom: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.80);
+      font-weight:800;
+      font-size:12px;
+    }
+    .pdot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35)}
+    .preview-body{padding:14px 14px 16px}
+    .preview-body h3{
+      margin: 0 0 8px;
+      font-size: 17px;
+      letter-spacing:-.2px;
+      color:#fff;
+      font-weight:900;
+    }
+    .preview-body p{
+      margin:0;
+      color: rgba(255,255,255,.82);
+      line-height:1.65;
+      font-weight:600;
+      font-size: 13.5px;
+    }
+    .preview-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+
+    .strip-wrap{
+      position:relative;
+      z-index:3;
+      margin-top: -36px;
+      padding-bottom: 6px;
+    }
+    .strip{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 12px;
+      overflow:hidden;
+    }
+    .strip-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .strip-item{
+      display:flex; align-items:center; gap:12px;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #fff;
+      transition: transform .16s ease, box-shadow .16s ease;
+      min-height: 64px;
+      min-width:0;
+    }
+    .strip-item:hover{transform: translateY(-2px); box-shadow: var(--shadowSoft)}
+    .ic{
+      width:42px; height:42px; border-radius: 14px;
+      background: rgba(33,61,176,.10);
+      border: 1px solid rgba(33,61,176,.18);
+      display:flex; align-items:center; justify-content:center;
+      color: #1e3a8a;
+      font-weight:1000;
+      flex:0 0 auto;
+    }
+    .strip-item b{display:block; font-size:14px; color:var(--text); font-weight:900}
+    .strip-item span{display:block; font-size:12px; color:var(--muted); margin-top:2px; font-weight:700}
+
+    section{padding: 54px 0}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:16px; flex-wrap:wrap;
+      margin-bottom: 16px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size: clamp(20px, 2.3vw, 30px);
+      letter-spacing:-.3px;
+      font-weight:900;
+    }
+    .section-head p{
+      margin:0;
+      color: var(--muted);
+      line-height:1.7;
+      font-weight:600;
+      max-width: 70ch;
+      font-size:14.5px;
+    }
+
+    .cards{display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px}
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadowSoft);
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+    .card:hover{transform: translateY(-2px); box-shadow: var(--shadow)}
+    .chip{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(33,61,176,.08);
+      border: 1px solid rgba(33,61,176,.14);
+      color: #1e3a8a;
+      font-weight:800;
+      font-size: 13px;
+    }
+    .card h3{margin:10px 0 8px; font-size:16px; font-weight:900}
+    .card p{margin:0; color:var(--muted); line-height:1.75; font-weight:600; font-size:14.5px}
+
+    .pricing{display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px}
+    .price-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadowSoft);
+      transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+    }
+    .price-card:hover{transform: translateY(-2px); box-shadow: var(--shadow)}
+    .highlight{border-color: rgba(255,138,0,.35); box-shadow: 0 18px 40px rgba(255,138,0,.10)}
+    .price-top{display:flex; align-items:center; justify-content:space-between; gap:10px}
+    .tag{
+      font-size:12px; font-weight:900;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(255,138,0,.12);
+      color:#b45309;
+      border: 1px solid rgba(255,138,0,.22);
+    }
+    .price-card h3{margin:0; font-size:16px; font-weight:900}
+    .price{margin: 10px 0 6px; font-size: 30px; font-weight: 1000; letter-spacing:-.5px; color:#0f172a}
+    .price small{font-size:12px; color:var(--muted); font-weight:700}
+    .note{margin:0 0 12px; color:var(--muted); line-height:1.7; font-weight:600; font-size:14.5px}
+    .list{margin:0; padding:0; list-style:none; display:grid; gap:10px}
+    .list li{display:flex; gap:10px; align-items:flex-start; color:#0f172a; font-weight:700; font-size:13px; line-height:1.55}
+    .check{
+      width:18px; height:18px; border-radius:6px;
+      background: rgba(33,61,176,.10);
+      border: 1px solid rgba(33,61,176,.18);
+      flex:0 0 auto;
+      position:relative;
+      margin-top:1px;
+    }
+    .check::after{
+      content:"";
+      position:absolute;
+      left:5px; top:5px;
+      width:7px; height:4px;
+      border-left:2px solid rgba(30,58,138,.9);
+      border-bottom:2px solid rgba(30,58,138,.9);
+      transform: rotate(-45deg);
+    }
+    .price-actions{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap}
+
+    .testi{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+    .tcard{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadowSoft);
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+    .tcard:hover{transform: translateY(-2px); box-shadow: var(--shadow)}
+    .t-top{display:flex; gap:12px; align-items:center}
+    .avatar{
+      width:44px; height:44px; border-radius: 16px;
+      background: rgba(33,61,176,.10);
+      border: 1px solid rgba(33,61,176,.18);
+      flex:0 0 auto;
+    }
+    .t-name{font-weight:1000}
+    .t-handle{color:var(--muted); font-weight:700; font-size:12px}
+    .stars{color:#f59e0b; letter-spacing:1px; font-size:13px; margin-top:2px}
+    .t-text{margin:12px 0 0; color:var(--muted); line-height:1.75; font-weight:600; font-size:14.5px}
+
+    .faq{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadowSoft);
+      overflow:hidden;
+    }
+    .q{
+      padding: 14px 16px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      cursor:pointer;
+      border-top:1px solid var(--line);
+      user-select:none;
+      font-weight:900;
+      font-size:14.5px;
+    }
+    .q:first-child{border-top:none}
+    .chev{
+      width:38px; height:38px; border-radius: 14px;
+      background: rgba(33,61,176,.08);
+      border: 1px solid rgba(33,61,176,.14);
+      display:flex; align-items:center; justify-content:center;
+      transition: transform .16s ease;
+      flex:0 0 auto;
+    }
+    .chev::before{
+      content:"";
+      width:10px; height:10px;
+      border-right:2px solid rgba(30,58,138,.85);
+      border-bottom:2px solid rgba(30,58,138,.85);
+      transform: rotate(45deg);
+      margin-top:-2px;
+      display:block;
+    }
+    .a{max-height:0; overflow:hidden; transition: max-height .22s ease; padding: 0 16px}
+    .a p{margin:0 0 14px; color:var(--muted); line-height:1.75; font-weight:600; font-size:14.5px}
+    .qa.open .a{max-height: 260px}
+    .qa.open .chev{transform: rotate(-180deg)}
+
+    footer{
+      padding: 28px 0 38px;
+      border-top:1px solid var(--line);
+      background:#fff;
+    }
+    .foot{
+      display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+      align-items:flex-start;
+    }
+    .foot p{margin:10px 0 0; color:var(--muted); line-height:1.75; font-weight:600; max-width: 70ch; font-size:14.5px}
+    .foot small{color:var(--muted); font-weight:700}
+
+    .typewrap{display:inline-flex; align-items:baseline; gap:8px; white-space:nowrap}
+    .caret{
+      width:10px; height: 1.05em; background: rgba(255,255,255,.95);
+      display:inline-block; border-radius: 6px;
+      transform: translateY(3px);
+      animation: blink 1s steps(2,end) infinite;
+    }
+    @keyframes blink{50%{opacity:0}}
+
+    .reveal{opacity:0; transform: translateY(10px); transition: opacity .45s ease, transform .45s ease}
+    .reveal.show{opacity:1; transform: translateY(0)}
+    .hero-entrance{animation: heroIn .45s ease both}
+    @keyframes heroIn{from{opacity:0; transform: translateY(8px)} to{opacity:1; transform: translateY(0)}}
+
+    .wa-float{
+      position:fixed; right:18px; bottom:18px; z-index:80;
+      width:54px; height:54px; border-radius:16px;
+      background: #22c55e;
+      box-shadow: 0 14px 30px rgba(34,197,94,.25);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .wa-float span{
+      width:22px; height:22px; border-radius:7px;
+      background:#fff; display:block;
+      position:relative;
+    }
+    .wa-float span::after{
+      content:"";
+      position:absolute;
+      inset:5px 6px 6px 5px;
+      border:2px solid rgba(22,101,52,.95);
+      border-left:0; border-top:0;
+      transform: rotate(-35deg);
+      border-radius:2px;
+    }
+
+    .modal-backdrop{
+      position:fixed; inset:0; z-index:100;
+      background: rgba(15,23,42,.55);
+      display:none; align-items:center; justify-content:center;
+      padding:18px;
+    }
+    .modal-backdrop.show{display:flex}
+    .modal{
+      width:min(740px, 96vw);
+      background:#fff;
+      border-radius: 22px;
+      box-shadow: 0 18px 60px rgba(15,23,42,.25);
+      overflow:hidden;
+      transform: translateY(10px);
+      opacity:0;
+      animation: pop .28s ease forwards;
+    }
+    @keyframes pop{to{transform: translateY(0); opacity:1}}
+    .modal-head{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 16px;
+      border-bottom:1px solid var(--line);
+      background: #f7f9ff;
+      font-weight:1000;
+    }
+    .modal-close{
+      width:40px; height:40px; border-radius: 12px;
+      border:1px solid var(--line);
+      background:#fff; cursor:pointer;
+      font-weight:1000;
+    }
+    .modal-body{padding:16px}
+    .modal-body h3{margin:0 0 8px; letter-spacing:-.2px}
+    .modal-body p{margin:0 0 12px; color:var(--muted); line-height:1.7; font-weight:600; font-size:14.5px}
+    .modal-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:12px}
+    .promo-box{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:14px;
+      background:#fff;
+    }
+    .promo-box b{display:block; margin-bottom:8px}
+    .promo-box ul{margin:0; padding-left:18px; color:var(--muted); line-height:1.75; font-weight:600; font-size:14.5px}
+    .promo-side{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:14px;
+      background:#fff;
+      display:flex; flex-direction:column; justify-content:space-between; gap:12px;
+    }
+    .promo-side .big{margin:0; font-size:30px; font-weight:1000; letter-spacing:-.5px}
+    .promo-side small{color:var(--muted); font-weight:700}
+    .modal-actions{display:flex; gap:10px; flex-wrap:wrap}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-wrap{grid-template-columns: 1fr}
+      .hero-card{max-width: 100%; margin-left:0}
+      .strip-grid{grid-template-columns: repeat(2, 1fr)}
+      .cards{grid-template-columns: 1fr}
+      .pricing{grid-template-columns: 1fr}
+      .testi{grid-template-columns: 1fr}
+      .modal-grid{grid-template-columns: 1fr}
+    }
+
+    /* Mobile navbar: tampilkan hamburger */
+    @media (max-width: 760px){
+      .nav-links{display:none}
+      .hamburger{display:inline-flex}
+    }
+
+    /* =========================
+       FIX RESPONSIVE HP (BARU)
+       ========================= */
+    @media (max-width: 520px){
+      .container{width:min(1150px, 94vw);}
+
+      .hero{
+        padding: 32px 0 76px;
+      }
+      .hero::after{
+        left:-25%;
+        right:-25%;
+        bottom:-78px;
+        height:160px;
+      }
+
+      .strip-wrap{ margin-top:-18px; }
+      .strip-grid{ grid-template-columns: 1fr; }
+
+      .hero-actions .btn,
+      .preview-actions .btn{
+        flex:1 1 100%;
+        white-space: normal;
+      }
+
+      .hero-card{padding:12px;}
+      .preview-body{padding:12px 12px 14px;}
+
+      .badge{font-size:12px;}
+      .stat{font-size:12px; padding:8px 10px;}
+
+      .logo{width:40px; height:40px;}
+      .logo img{width:100%; height:100%;}
+
+      /* biar brand gak ngedorong & CTA rapi */
+      .nav-inner{flex-wrap:wrap;}
+      .brand{flex:1 1 auto; min-width:0;}
+      .nav-cta{width:100%; justify-content:flex-end; flex-wrap:wrap;}
+      .nav-cta .btn{flex:1 1 auto;}
+    }
+
+    @media (max-width: 360px){
+      .hero h1{font-size: 28px;}
+      .btn{padding:11px 14px; font-size:13.5px;}
+      .hero::after{bottom:-70px; height:150px;}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo">
+          <img src="./logo.png" alt="">
+        </div>
+        <div>
+          <div class="brand-title">Sky Developer</div>
+          <div class="brand-sub">Mulai 300K • Konsultasi Gratis</div>
+        </div>
+      </div>
+
+      <nav class="nav-links" aria-label="navigasi">
+        <a href="#layanan">Layanan</a>
+        <a href="#manfaat">Manfaat</a>
+        <a href="#harga">Harga</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="#harga">Lihat Paket</a>
+        <a class="btn btn-primary" href="https://api.whatsapp.com/send/?phone=%2B62282731958&text&type=phone_number&app_absent=0" aria-label="Kontak WhatsApp">Konsultasi Gratis</a>
+
+        <!-- Hamburger 3 garis (FIX) -->
+        <button class="hamburger" id="menuBtn" type="button" aria-label="Buka menu" aria-expanded="false">
+          <i aria-hidden="true"><span></span><span></span><span></span></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Dropdown menu (dipindah keluar nav-inner) -->
+    <div class="mobile-menu" id="mobileMenu" aria-label="Menu mobile">
+      <div class="container">
+        <a href="#layanan">Layanan</a>
+        <a href="#manfaat">Manfaat</a>
+        <a href="#harga">Harga</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div class="hero-entrance">
+          <span class="badge">
+            <span class="dot" aria-hidden="true"></span>
+            Website Adalah Asset Pribadi Terbaik Untuk Bisnis
+          </span>
+
+          <h1>Jasa Pembuatan Website</h1>
+          <div>
+            <h1>
+              <span class="typewrap">
+                <span class="accent" id="typeTarget"></span>
+                <span class="caret" aria-hidden="true"></span>
+              </span>
+            </h1>
+          </div>
+
+          <p>
+            Mulai <b style="color:var(--primary2)">300K</b> untuk <b>perusahaan</b> maupun <b>UMKM</b>.
+            Kamu bisa konsultasi dulu (gratis), lalu <b>harga ditentukan bersama</b> sampai deal.
+            Website kamu tampil profesional, cepat, responsif, dan siap dipakai promosi 24/7.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#harga">Lihat Paket & Harga</a>
+            <a class="btn btn-outline" href="https://api.whatsapp.com/send/?phone=%2B62282731958&text&type=phone_number&app_absent=0" aria-label="Minta penawaran WhatsApp">Minta Penawaran</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat"><span class="dot" aria-hidden="true"></span> Gratis konsultasi kebutuhan</div>
+            <div class="stat"><span class="dot" aria-hidden="true"></span> Responsif semua device</div>
+            <div class="stat"><span class="dot" aria-hidden="true"></span> Aset milik kamu sendiri</div>
+          </div>
+        </div>
+
+        <aside class="hero-card reveal" aria-label="preview">
+          <div class="hero-preview">
+            <div class="preview-top">
+              <span class="pdot"></span><span class="pdot"></span><span class="pdot"></span>
+              <span style="margin-left:8px">preview.websitekamu.id</span>
+            </div>
+            <div class="preview-body">
+              <h3>Website yang “niat”, bukan sekadar ada.</h3>
+              <p>
+                Tampilan bersih, warna jelas, CTA rapi.
+                Cocok buat promosi perusahaan & UMKM tanpa terlihat ramai.
+              </p>
+
+              <div class="preview-actions">
+                <a class="btn btn-primary" href="https://api.whatsapp.com/send/?phone=%2B62282731958&text&type=phone_number&app_absent=0">Konsultasi Sekarang</a>
+                <a class="btn btn-outline" href="#manfaat">Kenapa Website?</a>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- STRIP LAYANAN -->
+    <div class="strip-wrap" id="layanan">
+      <div class="container">
+        <div class="strip reveal">
+          <div class="strip-grid">
+            <div class="strip-item">
+              <div class="ic">🏢</div>
+              <div><b>Website Perusahaan</b><span>Profil, layanan, portofolio</span></div>
+            </div>
+            <div class="strip-item">
+              <div class="ic">🧾</div>
+              <div><b>UMKM / Usaha</b><span>Promosi, katalog, kontak</span></div>
+            </div>
+            <div class="strip-item">
+              <div class="ic">🛒</div>
+              <div><b>Toko Online</b><span>Landing + CTA order</span></div>
+            </div>
+            <div class="strip-item">
+              <div class="ic">🎯</div>
+              <div><b>Landing Promo</b><span>Event, promo, campaign</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MANFAAT -->
+    <section id="manfaat">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="reveal">Kenapa website itu penting?</h2>
+            <p class="reveal">
+              Media sosial bagus untuk jangkauan, tapi website itu <b>aset pribadi</b>.
+              Selama langganan tidak diputuskan, website kamu tetap aman dan brand kamu punya “rumah”.
+            </p>
+          </div>
+          <a class="btn btn-primary reveal" href="https://api.whatsapp.com/send/?phone=%2B62282731958&text&type=phone_number&app_absent=0">Konsultasi Gratis via WA</a>
+        </div>
+
+        <div class="cards">
+          <div class="card reveal">
+            <span class="chip">Aset Pribadi</span>
+            <h3>Website = “rumah” brand kamu</h3>
+            <p>Kontrol penuh tampilan & konten. Tidak tergantung algoritma atau aturan platform.</p>
+          </div>
+          <div class="card reveal">
+            <span class="chip">Naikkan Trust</span>
+            <h3>Terlihat lebih profesional</h3>
+            <p>Calon klien lebih yakin karena profil, layanan, dan kontak tampil rapi dan jelas.</p>
+          </div>
+          <div class="card reveal">
+            <span class="chip">Promosi 24/7</span>
+            <h3>Selalu aktif</h3>
+            <p>Website tetap “jualan”: menjelaskan penawaran & mengarahkan pengunjung ke chat/booking.</p>
+          </div>
+          <div class="card reveal">
+            <span class="chip">Siap Iklan</span>
+            <h3>Landing lebih fokus</h3>
+            <p>Kalau pasang iklan, web jadi tujuan yang jelas → lebih mudah konversi.</p>
+          </div>
+          <div class="card reveal">
+            <span class="chip">Responsif</span>
+            <h3>Bagus di semua device</h3>
+            <p>Layout dibuat nyaman dibuka dari HP, tablet, atau laptop.</p>
+          </div>
+          <div class="card reveal">
+            <span class="chip">Fleksibel</span>
+            <h3>Fleksibel Mudah Di Share</h3>
+            <p>Website Itu Fleksibel Gampang Di Share Cukup Ingat Domain Dan Usaha Makin Terlihat Lebih Berkelas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HARGA -->
+    <section id="harga">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="reveal">Paket harga mulai 300K</h2>
+            <p class="reveal">
+              Ini contoh paket untuk gambaran. Final harga tetap bisa menyesuaikan kebutuhan kamu.
+            </p>
+          </div>
+        </div>
+
+        <div class="pricing">
+          <div class="price-card reveal">
+            <div class="price-top">
+              <h3>Paket UMKM</h3>
+              <span class="tag">Mulai</span>
+            </div>
+            <div class="price">300K <small>/ website</small></div>
+            <p class="note">Cocok untuk usaha kecil yang butuh tampil profesional cepat.</p>
+            <ul class="list">
+              <li><span class="check"></span> Landing Page 1 halaman</li>
+              <li><span class="check"></span> Desain modern + responsif</li>
+              <li><span class="check"></span> Copywriting basic (rapi & jelas)</li>
+              <li><span class="check"></span> Fiture Catalog Atau Yang Lainnya</li>
+            </ul>
+            <div class="price-actions">
+              <a class="btn btn-primary" href="https://api.whatsapp.com/send/?phone=%2B62282731958&text&type=phone_number&app_absent=0">Konsultasi Paket Ini</a>
+              <a class="btn btn-soft" href="#faq">Lihat FAQ</a>
+            </div>
+          </div>
+
+          <div class="price-card highlight reveal">
+            <div class="price-top">
+              <h3>Paket Medium</h3>
+              <span class="tag">Favorit</span>
+            </div>
+            <div class="price">Mulai 650K <small>/ website</small></div>
+            <p class="note">Company profile: layanan, portofolio, dan kredibilitas.</p>
+            <ul class="list">
+              <li><span class="check"></span> Mendapatkan 5+ Halaman</li>
+              <li><span class="check"></span> Tampilan Lebih Ekslusif Dan Rapih</li>
+              <li><span class="check"></span> Struktur konten lebih “corporate”</li>
+              <li><span class="check"></span> Siap dipakai promosi & penawaran</li>
+            </ul>
+            <div class="price-actions">
+              <a class="btn btn-primary" href="https://api.whatsapp.com/send/?phone=%2B62282731958&text&type=phone_number&app_absent=0">Minta Penawaran</a>
+              <a class="btn btn-soft" href="#testimoni">Lihat Testimoni</a>
+            </div>
+          </div>
+
+          <div class="price-card reveal">
+            <div class="price-top">
+              <h3>Paket Toko Online</h3>
+              <span class="tag">Custom</span>
+            </div>
+            <div class="price">Mulai 900K <small>/ website</small></div>
+            <p class="note">Landing + katalog/produk + CTA order. Bisa upgrade sesuai kebutuhan.</p>
+            <ul class="list">
+              <li><span class="check"></span> Landing + section produk</li>
+              <li><span class="check"></span> Admin Panel</li>
+              <li><span class="check"></span> Banner promo + highlight produk</li>
+              <li><span class="check"></span> Bisa upgrade fitur sesuai budget</li>
+            </ul>
+            <div class="price-actions">
+              <a class="btn btn-primary" href="https://api.whatsapp.com/send/?phone=%2B62282731958&text&type=phone_number&app_absent=0">Diskusi Kebutuhan</a>
+              <a class="btn btn-soft" href="#manfaat">Kenapa Website?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section id="testimoni">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="reveal">Apa kata klien?</h2>
+            <p class="reveal">Targetnya: tampilan enak, CTA jelas, dan hasil bikin bisnis lebih dipercaya.</p>
+          </div>
+        </div>
+
+        <div class="testi">
+          <div class="tcard reveal">
+            <div class="t-top">
+              <div class="avatar"></div>
+              <div>
+                <div class="t-name">Andi</div>
+                <div class="t-handle">@umkm_sukses</div>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="t-text">“Tampilannya rapi banget. Enak dibuka di HP, CTA-nya jelas.”</p>
+          </div>
+
+          <div class="tcard reveal">
+            <div class="t-top">
+              <div class="avatar"></div>
+              <div>
+                <div class="t-name">Laura</div>
+                <div class="t-handle">@brand_lokal</div>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="t-text">“Respons cepat, komunikatif, dan revisi aman. Hasilnya clean.”</p>
+          </div>
+
+          <div class="tcard reveal">
+            <div class="t-top">
+              <div class="avatar"></div>
+              <div>
+                <div class="t-name">Raka</div>
+                <div class="t-handle">@company_id</div>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="t-text">“Company profile jadi kelihatan profesional. Lebih pede buat proposal.”</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="reveal">FAQ</h2>
+            <p class="reveal">Jawaban cepat untuk pertanyaan yang sering ditanyakan.</p>
+          </div>
+        </div>
+
+        <div class="faq reveal">
+          <div class="qa open">
+            <div class="q">
+              <div>Apakah harus punya website?</div>
+              <span class="chev"></span>
+            </div>
+            <div class="a">
+              <p>
+                Website itu “rumah” resmi bisnis kamu. Media sosial bisa berubah algoritma,
+                sedangkan website tetap jadi aset kamu selama langganan tidak diputuskan.
+              </p>
+            </div>
+          </div>
+
+          <div class="qa">
+            <div class="q">
+              <div>Harga kok bisa fleksibel?</div>
+              <span class="chev"></span>
+            </div>
+            <div class="a">
+              <p>
+                Karena kebutuhan beda-beda. Kita diskusi jumlah halaman, konten, desain, dan target.
+                Setelah itu baru deal sesuai budget.
+              </p>
+            </div>
+          </div>
+
+          <div class="qa">
+            <div class="q">
+              <div>Responsif di semua device?</div>
+              <span class="chev"></span>
+            </div>
+            <div class="a">
+              <p>Iya. Layout dibuat adaptif untuk HP, tablet, dan laptop.</p>
+            </div>
+          </div>
+
+          <div class="qa">
+            <div class="q">
+              <div>Apakah Bisa Nambah Fitur Di Web Yang Udah Ada?</div>
+              <span class="chev"></span>
+            </div>
+            <div class="a">
+              <p>Bisa, Bisa Membuat Fitur Sesuai Budget Anda Dan Keinginan Anda </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap">
+          <a class="btn btn-primary reveal" href="https://api.whatsapp.com/send/?phone=%2B62282731958&text&type=phone_number&app_absent=0">Konsultasi Gratis Sekarang</a>
+          <a class="btn btn-soft reveal" href="#layanan">Lihat Layanan</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container foot">
+        <div>
+          <div class="brand">
+            <div class="logo" aria-hidden="true"></div>
+            <div>
+              <div style="font-weight:1000">Jasa Pembuatan Website</div>
+              <small style="color:var(--muted); font-weight:700">Mulai 300K • Perusahaan & UMKM • Konsultasi Gratis</small>
+            </div>
+          </div>
+          <p>
+            Website bukan sekadar pajangan ini aset brand kamu. Kalau kamu mau tampil profesional dan punya “rumah” sendiri,
+            tinggal chat: kita diskusi sampai cocok.
+          </p>
+        </div>
+
+        <div style="display:grid; gap:10px; min-width: 220px">
+          <a class="btn btn-primary" href="https://api.whatsapp.com/send/?phone=%2B62282731958&text&type=phone_number&app_absent=0">Hubungi via WhatsApp</a>
+          <a class="btn btn-soft" href="#harga">Lihat Paket</a>
+          <small>© <span id="year"></span> • Semua hak cipta dilindungi</small>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Floating WhatsApp -->
+  <a class="wa-float" href="" aria-label="WhatsApp">
+    <span aria-hidden="true"></span>
+  </a>
+
+  <!-- Modal Promo -->
+  <div class="modal-backdrop" id="promoBackdrop" role="dialog" aria-modal="true" aria-label="Informasi & Promo">
+    <div class="modal">
+      <div class="modal-head">
+        <div>Info Terbaru</div>
+        <button class="modal-close" id="promoClose" type="button" aria-label="Tutup">✕</button>
+      </div>
+      <div class="modal-body">
+        <h3>🔥 Promo Februari Meriah</h3>
+        <p>
+          Promo Terbatas Hanya Ada Di Bulan Februari 
+        </p>
+
+        <div class="modal-grid">
+          <div class="promo-box">
+            <b>Promo Februari:</b>
+            <ul>
+              <li>Diskon 20% 5 Client Bulan ini</li>
+              <li>Gratis 2x revisi desain (selama 7 hari)</li>
+              <li>Gratis Desain Banner Untuk Web (Sesuai Request)</li>
+            </ul>
+          </div>
+          <div class="promo-side">
+            <div>
+              <small>Mulai dari</small>
+              <p class="big">300K</p>
+              <small>Harga disepakati bersama</small>
+            </div>
+            <div class="modal-actions">
+              <a class="btn btn-primary" href="https://api.whatsapp.com/send/?phone=%2B62282731958&text&type=phone_number&app_absent=0">Ambil Promo</a>
+              <button class="btn btn-soft" id="promoLater" type="button">Nanti dulu</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ====== Typewriter ======
+    const phrases = ["Toko Online", "Perusahaan", "UMKM", "Landing Promo"];
+    const target = document.getElementById("typeTarget");
+    let p = 0, i = 0, deleting = false;
+
+    function tick(){
+      const word = phrases[p];
+      if(!deleting){
+        i++;
+        target.textContent = word.slice(0, i);
+        if(i >= word.length){
+          deleting = true;
+          setTimeout(tick, 1100);
+          return;
+        }
+      }else{
+        i--;
+        target.textContent = word.slice(0, i);
+        if(i <= 0){
+          deleting = false;
+          p = (p + 1) % phrases.length;
+        }
+      }
+      setTimeout(tick, deleting ? 45 : 70);
+    }
+    tick();
+
+    // ====== Reveal on scroll ======
+    const revealEls = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries)=>{
+      for(const e of entries){
+        if(e.isIntersecting){
+          e.target.classList.add("show");
+          io.unobserve(e.target);
+        }
+      }
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+
+    // ====== FAQ Accordion ======
+    document.querySelectorAll(".qa .q").forEach(q=>{
+      q.addEventListener("click", ()=>{
+        const wrap = q.parentElement;
+        const isOpen = wrap.classList.contains("open");
+        document.querySelectorAll(".qa").forEach(x=>x.classList.remove("open"));
+        if(!isOpen) wrap.classList.add("open");
+      });
+    });
+
+    // ====== Promo Modal ======
+    const backdrop = document.getElementById("promoBackdrop");
+    const closeBtn = document.getElementById("promoClose");
+    const laterBtn = document.getElementById("promoLater");
+
+    function openPromo(){
+    backdrop.classList.add("show");
+    document.body.style.overflow = "hidden";
+    }
+
+    function closePromo(remember=true){
+      backdrop.classList.remove("show");
+      document.body.style.overflow = "";
+      if(remember) localStorage.setItem("promo_dismissed","1");
+    }
+
+    closeBtn.addEventListener("click", ()=> closePromo(true));
+    laterBtn.addEventListener("click", ()=> closePromo(false));
+    backdrop.addEventListener("click", (e)=>{
+      if(e.target === backdrop) closePromo(true);
+    });
+    window.addEventListener("keydown", (e)=>{
+      if(e.key === "Escape" && backdrop.classList.contains("show")) closePromo(true);
+    });
+    window.addEventListener("load", ()=> setTimeout(openPromo, 450));
+
+    // ====== Mobile Menu Dropdown (FIX) ======
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    function closeMenu(){
+      mobileMenu.classList.remove("show");
+      menuBtn.setAttribute("aria-expanded","false");
+    }
+    function toggleMenu(){
+      const open = mobileMenu.classList.toggle("show");
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+
+    if(menuBtn && mobileMenu){
+      menuBtn.addEventListener("click", (e)=>{
+        e.stopPropagation();
+        toggleMenu();
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(a=>{
+        a.addEventListener("click", ()=>{
+          closeMenu();
+        });
+      });
+
+      document.addEventListener("click", ()=>{
+        if(mobileMenu.classList.contains("show")) closeMenu();
+      });
+
+      window.addEventListener("keydown", (e)=>{
+        if(e.key === "Escape") closeMenu();
+      });
+    }
+
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
